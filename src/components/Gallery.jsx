@@ -2,19 +2,39 @@ import { useRef } from 'react';
 
 const ITEMS = [
   {
+    src: '/assets/photos/kama-gallery/kama-2.jpg',
+    alt: 'Hon. (Dr.) Kama Nkemkanma seated in the House of Representatives Green Chamber',
+    caption: 'Representing Ohaozara, Onicha & Ivo on the floor of the Green Chamber.',
+  },
+  {
+    src: '/assets/photos/kama-gallery/kama-3.jpg',
+    alt: 'Hon. (Dr.) Kama Nkemkanma in traditional Isiagu attire speaking with NTA and Afia TV journalists',
+    caption: 'Briefing national press on legislative bills and constituency priorities.',
+  },
+  {
+    src: '/assets/photos/kama-gallery/kama-1.jpg',
+    alt: 'Hon. (Dr.) Kama Nkemkanma at a National Assembly committee hearing',
+    caption: 'Active oversight and committee deliberations in Abuja.',
+  },
+  {
+    src: '/assets/photos/kama-gallery/kama-4.jpg',
+    alt: 'Hon. (Dr.) Kama Nkemkanma walking through the National Assembly corridor with legislative briefs',
+    caption: 'Advancing bills, motions, and petitions for our communities.',
+  },
+  {
+    src: '/assets/photos/kama-gallery/kama-5.jpg',
+    alt: 'Hon. (Dr.) Kama Nkemkanma in a bilateral diplomatic engagement',
+    caption: 'Building international partnerships for infrastructure and development.',
+  },
+  {
     src: '/assets/photos/kama-apc-rally.jpg',
-    alt: 'Hon. Dr. Nkemkanma Kama addressing supporters in APC attire',
-    caption: 'Engaging grassroots supporters across Ohaozara, Onicha, and Ivo.',
+    alt: 'Hon. (Dr.) Kama Nkemkanma addressing supporters in APC attire',
+    caption: 'Engaging grassroots communities across Ohaozara, Onicha, and Ivo.',
   },
   {
     src: '/assets/photos/kama-office-portrait.jpg',
-    alt: 'Hon. Dr. Nkemkanma Kama official portrait',
+    alt: 'Hon. (Dr.) Kama Nkemkanma official portrait',
     caption: 'Dedicated legislative representation at the House of Representatives.',
-  },
-  {
-    src: '/assets/photos/renewed-hope-fon-hipe.jpg',
-    alt: 'Renewed Hope for FON na HIPE Continua',
-    caption: 'Renewed Hope for FON na HIPE 2.0 — Continua.',
   },
 ];
 
@@ -30,8 +50,8 @@ export default function Gallery() {
       <div className="shell">
         <div className="sec-head">
           <div>
-            <p className="eyebrow">On the Ground</p>
-            <h2>Moments across the constituency</h2>
+            <p className="eyebrow">On the Ground &amp; In the Chamber</p>
+            <h2>Moments in service of our people</h2>
           </div>
           <div className="gal-controls">
             <button

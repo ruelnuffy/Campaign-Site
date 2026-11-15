@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { findSupporter, registerSupporter } from '../utils/supporterStore';
+import { LGA_COMMUNITIES, findSupporter, registerSupporter } from '../utils/supporterStore';
 
 export default function SupporterSection({ onCardReady }) {
   const [wardsMap, setWardsMap] = useState({});
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [lga, setLga] = useState('');
+  const [community, setCommunity] = useState('');
   const [ward, setWard] = useState('');
+  const [pollingUnit, setPollingUnit] = useState('');
   const [joinStatus, setJoinStatus] = useState('');
 
   const [identifier, setIdentifier] = useState('');
@@ -108,7 +111,10 @@ export default function SupporterSection({ onCardReady }) {
 
   const handleJoinSubmit = e => {
     e.preventDefault();
-    const result = registerSupporter({ name, phone, lga, ward }, wardsMap);
+    const result = registerSupporter(
+      { name, phone, email, lga, community, ward, pollingUnit },
+      wardsMap,
+    );
     if (result.ok) {
       setJoinStatus('');
       onCardReady(result.supporter);
@@ -128,25 +134,29 @@ export default function SupporterSection({ onCardReady }) {
     }
   };
 
+  const communityList = LGA_COMMUNITIES[lga] || [];
   const wardList = wardsMap[lga] || [];
 
   return (
-    <section className="section section-tint" id="involved">
+    <section className="section" id="involved">
       <div className="shell involve-wrap">
         <div className="sec-head">
           <div>
-            <p className="eyebrow">Join the Movement</p>
-            <h2>Get your HIPE 2.0 Supporter Card</h2>
+            <p className="eyebrow">HIPE-Agenda Volunteer</p>
+            <h2>Become a HIPE-Agenda Volunteer Member</h2>
             <p className="sec-sub">
-              Register for your ward and download or print your official supporter ID card.
+              Register with your LGA, Community, INEC Ward, and Polling Unit to receive grassroots
+              updates and your Volunteer ID Card.
             </p>
           </div>
         </div>
 
         <div className="involve-grid">
           <div className="panel-box form-box">
-            <h3>Create your Supporter ID Card</h3>
-            <p className="panel-sub">Fill in your details below to generate your HIPE 2.0 card.</p>
+            <h3>Volunteer Registration</h3>
+            <p className="panel-sub">
+              Fill in your details below to register as a HIPE-Agenda Volunteer Member.
+            </p>
 
             <form className="join-form" onSubmit={handleJoinSubmit}>
               <div className="two">
@@ -184,7 +194,21 @@ export default function SupporterSection({ onCardReady }) {
 
               <div className="two">
                 <div className="f">
-                  <label htmlFor="jlga">Local government</label>
+                  <label htmlFor="jemail">Email address</label>
+                  <input
+                    id="jemail"
+                    name="email"
+                    type="email"
+                    required
+                    maxLength={120}
+                    autoComplete="email"
+                    placeholder="you@example.com"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="f">
+                  <label htmlFor="jlga">Local Government Area (LGA)</label>
                   <select
                     id="jlga"
                     name="lga"
@@ -192,6 +216,7 @@ export default function SupporterSection({ onCardReady }) {
                     value={lga}
                     onChange={e => {
                       setLga(e.target.value);
+                      setCommunity('');
                       setWard('');
                     }}
                   >
@@ -201,8 +226,28 @@ export default function SupporterSection({ onCardReady }) {
                     <option value="Ivo">Ivo</option>
                   </select>
                 </div>
+              </div>
+
+              <div className="two">
                 <div className="f">
-                  <label htmlFor="jward">Ward</label>
+                  <label htmlFor="jcomm">Community</label>
+                  <select
+                    id="jcomm"
+                    name="community"
+                    required
+                    value={community}
+                    onChange={e => setCommunity(e.target.value)}
+                  >
+                    <option value="">{lga ? 'Select your community' : 'Choose your LGA first'}</option>
+                    {communityList.map(c => (
+                      <option key={c} value={c}>
+                        {c}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="f">
+                  <label htmlFor="jward">INEC Ward</label>
                   <select
                     id="jward"
                     name="ward"
@@ -210,7 +255,7 @@ export default function SupporterSection({ onCardReady }) {
                     value={ward}
                     onChange={e => setWard(e.target.value)}
                   >
-                    <option value="">{lga ? 'Select your ward' : 'Choose your LGA first'}</option>
+                    <option value="">{lga ? 'Select your INEC ward' : 'Choose your LGA first'}</option>
                     {wardList.map(w => (
                       <option key={w} value={w}>
                         {w}
@@ -218,6 +263,20 @@ export default function SupporterSection({ onCardReady }) {
                     ))}
                   </select>
                 </div>
+              </div>
+
+              <div className="f">
+                <label htmlFor="jpu">Polling Unit (PU)</label>
+                <input
+                  id="jpu"
+                  name="polling_unit"
+                  type="text"
+                  required
+                  maxLength={80}
+                  placeholder="Enter your Polling Unit name or code (e.g. PU 004)"
+                  value={pollingUnit}
+                  onChange={e => setPollingUnit(e.target.value)}
+                />
               </div>
 
               <div className="camera-field">
@@ -271,16 +330,16 @@ export default function SupporterSection({ onCardReady }) {
                 {joinStatus}
               </p>
               <button className="btn btn-primary btn-full" type="submit">
-                Generate My ID Card
+                Register as HIPE-Agenda Volunteer
               </button>
             </form>
           </div>
 
           <div className="side-stack">
             <div className="panel-box lookup-box" id="member-search">
-              <h3>Already a member?</h3>
+              <h3>Already registered?</h3>
               <p className="panel-sub">
-                Find or reprint your HIPE 2.0 card using your Card ID or phone number.
+                Find or reprint your HIPE-Agenda Volunteer Card using your Card ID or phone number.
               </p>
               <form className="lookup-form" onSubmit={handleLookupSubmit}>
                 <label htmlFor="lookup-id">Card ID or phone number</label>
@@ -311,8 +370,42 @@ export default function SupporterSection({ onCardReady }) {
               </p>
               <dl className="office-facts">
                 <div>
-                  <dt>Movement</dt>
-                  <dd>Renewed Hope for FON na HIPE 2.0</dd>
+                  <dt>Call</dt>
+                  <dd><a className="contact-link" href="tel:07017089013">07017089013</a></dd>
+                </div>
+                <div>
+                  <dt>Email</dt>
+                  <dd><a className="contact-link" href="mailto:info@kamaconnect.com">info@kamaconnect.com</a></dd>
+                </div>
+                <div>
+                  <dt>Agenda</dt>
+                  <dd>HIPE Agenda &bull; Hon. (Dr.) Kama Nkemkanma, FIMC, CMC</dd>
+                </div>
+                <div>
+                  <dt>Portal</dt>
+                  <dd>kamaconnect.com</dd>
+                </div>
+                <div>
+                  <dt>Socials</dt>
+                  <dd className="social-links">
+                    <a
+                      className="contact-link"
+                      href="https://www.facebook.com/profile.php?id=1537517223&mibextid=wwXIfr"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Facebook
+                    </a>
+                    {' '}&bull;{' '}
+                    <a
+                      className="contact-link"
+                      href="https://www.instagram.com/nkemkanmakama?rpxt=MndxdzU1bDVwZTFj"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Instagram
+                    </a>
+                  </dd>
                 </div>
                 <div>
                   <dt>Party</dt>

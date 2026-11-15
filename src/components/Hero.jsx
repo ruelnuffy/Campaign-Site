@@ -3,18 +3,33 @@ export default function Hero() {
     <section className="hero" id="top">
       <div className="shell hero-grid">
         <div className="hero-copy">
+          <div className="hero-logos-row">
+            <img
+              className="logo-apc"
+              src="/assets/apc-logo.png"
+              alt="APC Logo"
+              height="44"
+            />
+            <img
+              className="logo-hipe"
+              src="/assets/hipe-logo.jpg"
+              alt="HIPE Agenda Logo"
+              height="44"
+            />
+          </div>
           <h1>
-            Hon. Dr. Nkemkanma Kama <span className="badge-20">HIPE 2.0</span>
+            Hon. (Dr.) Kama Nkemkanma <span className="badge-20">FIMC, CMC</span>
           </h1>
           <p className="hero-slogan">
-            This Renewed Hope for <strong>FON</strong> na <strong>HIPE 2.0</strong>
+            The <strong>HIPE Agenda</strong> — Health, Infrastructure, Poverty Alleviation &amp; Education
           </p>
           <p className="hero-lede">
-            Continuity, grassroots empowerment, and bold representation for Ohaozara, Onicha, and Ivo in Ebonyi State.
+            Focused legislative representation and measurable community projects across Ohaozara,
+            Onicha, and Ivo Federal Constituency, Ebonyi State.
           </p>
           <div className="hero-cta">
-            <a className="btn btn-primary" href="#agenda">Explore the Agenda &rarr;</a>
-            <a className="btn btn-outline-light" href="#involved">Get Supporter ID Card</a>
+            <a className="btn btn-primary" href="#projects">Explore HIPE Projects &rarr;</a>
+            <a className="btn btn-outline-light" href="#involved">Become a Volunteer</a>
           </div>
         </div>
 
@@ -22,13 +37,13 @@ export default function Hero() {
           <figure className="hero-frame">
             <img
               src="/assets/photos/kama-office-portrait.jpg"
-              alt="Hon. Dr. Nkemkanma Kama seated in office regalia"
+              alt="Hon. (Dr.) Kama Nkemkanma, FIMC, CMC seated in office regalia"
               width="900"
               height="900"
             />
             <figcaption>
-              <span className="cap-tag">Ijele Chukwu</span>
-              <span className="cap-sub">House of Representatives</span>
+              <span className="cap-tag">HIPE Agenda</span>
+              <span className="cap-sub">House of Representatives &bull; kamaconnect.com</span>
             </figcaption>
           </figure>
         </div>

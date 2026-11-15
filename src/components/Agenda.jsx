@@ -1,23 +1,23 @@
 const PILLARS = [
   {
-    num: '01',
-    title: 'Rural Roads & Water',
-    desc: 'Connecting farming communities and markets across Ohaozara, Onicha, and Ivo with durable access roads and clean water.',
+    letter: 'H',
+    title: 'Health',
+    desc: 'Expanding primary and tertiary healthcare access, medical outreaches, and clean solar-powered water infrastructure across Ohaozara, Onicha, and Ivo.',
   },
   {
-    num: '02',
-    title: 'Youth & Enterprise',
-    desc: 'Skills grants, digital training, and small-business support so young people build thriving livelihoods at home.',
+    letter: 'I',
+    title: 'Infrastructural Development',
+    desc: 'Solar mini-grids, street lighting, boreholes, rural access roads, and community facilities that power daily life and local commerce.',
   },
   {
-    num: '03',
-    title: 'Schools & Healthcare',
-    desc: 'Scholarships, classroom upgrades, and accessible primary healthcare centres in every ward.',
+    letter: 'P',
+    title: 'Poverty Alleviation & Empowerment',
+    desc: 'Indigent housing, skills tools (sewing machines, grinding machines, laptops, tricycles, motorcycles), and federal employment facilitation.',
   },
   {
-    num: '04',
-    title: 'Strong Voice in Abuja',
-    desc: 'Consistent, people-first bills and federal constituency interventions that bring tangible value back to Ebonyi.',
+    letter: 'E',
+    title: 'Education',
+    desc: 'Classroom block renovations, summer holiday coaching, scholarships, and federal tertiary institution bills for our students.',
   },
 ];
 
@@ -27,15 +27,19 @@ export default function Agenda() {
       <div className="shell">
         <div className="sec-head">
           <div>
-            <p className="eyebrow">HIPE 2.0 Agenda</p>
-            <h2>Four pillars for our people</h2>
+            <p className="eyebrow">HIPE Agenda</p>
+            <h2>Four Pillars of Service</h2>
+            <p className="sec-sub">
+              Every constituency intervention by Hon. (Dr.) Kama Nkemkanma is anchored on the four
+              HIPE pillars.
+            </p>
           </div>
         </div>
 
-        <div className="agenda-grid">
+        <div className="hipe-grid">
           {PILLARS.map(pillar => (
-            <article className="agenda-card" key={pillar.num}>
-              <span className="ag-num">{pillar.num}</span>
+            <article className="hipe-card" key={pillar.letter}>
+              <span className="hipe-letter">{pillar.letter}</span>
               <h3>{pillar.title}</h3>
               <p>{pillar.desc}</p>
             </article>

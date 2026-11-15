@@ -1,4 +1,12 @@
-const STORAGE_KEY = 'hipe20_supporters';
+const STORAGE_KEY = 'hipe_agenda_volunteers';
+
+const LGA_COMMUNITIES = {
+  Ohaozara: ['Ugwulangwu', 'Okposi', 'Uburu'],
+  Onicha: ['Onicha Igboeze', 'Isuokoma', 'Oshiri', 'Ukawu', 'Abaomege'],
+  Ivo: ['Ishiagu', 'Akaeze'],
+};
+
+export { LGA_COMMUNITIES };
 
 function loadAll() {
   try {
@@ -31,10 +39,13 @@ function generateCardNumber() {
   return `HIPE-${hex}`;
 }
 
-export function registerSupporter({ name, phone, lga, ward }, wardsMap) {
+export function registerSupporter({ name, phone, email, lga, community, ward, pollingUnit }, wardsMap) {
   const cleanName = String(name || '').trim();
+  const cleanEmail = String(email || '').trim().toLowerCase();
   const cleanLga = String(lga || '').trim();
+  const cleanCommunity = String(community || '').trim();
   const cleanWard = String(ward || '').trim();
+  const cleanPu = String(pollingUnit || '').trim();
   const errors = [];
 
   if (!/^[\p{L}\p{M}][\p{L}\p{M} .’'\-]{1,79}$/u.test(cleanName)) {
@@ -46,9 +57,22 @@ export function registerSupporter({ name, phone, lga, ward }, wardsMap) {
     errors.push('Enter a valid Nigerian phone number, e.g. 080 0000 0000.');
   }
 
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
+    errors.push('Enter a valid email address.');
+  }
+
+  const validCommunities = LGA_COMMUNITIES[cleanLga] || [];
+  if (!validCommunities.includes(cleanCommunity)) {
+    errors.push('Choose your Local Government Area and Community.');
+  }
+
   const validWards = wardsMap?.[cleanLga];
   if (!Array.isArray(validWards) || !validWards.includes(cleanWard)) {
-    errors.push('Choose your Local Government Area and Ward.');
+    errors.push('Choose your INEC Ward.');
+  }
+
+  if (cleanPu.length < 2 || cleanPu.length > 80) {
+    errors.push('Enter your Polling Unit (PU).');
   }
 
   if (errors.length > 0) {
@@ -65,8 +89,11 @@ export function registerSupporter({ name, phone, lga, ward }, wardsMap) {
     card_number: generateCardNumber(),
     full_name: cleanName,
     phone: normalizedPhone,
+    email: cleanEmail,
     lga: cleanLga,
+    community: cleanCommunity,
     ward: cleanWard,
+    polling_unit: cleanPu,
     created_at: new Date().toISOString(),
   };
 
@@ -79,7 +106,7 @@ export function registerSupporter({ name, phone, lga, ward }, wardsMap) {
 export function findSupporter(identifier) {
   const query = String(identifier || '').trim();
   if (!query) {
-    return { ok: false, errors: ['Enter your Card ID (e.g. HIPE-...) or registered phone number.'] };
+    return { ok: false, errors: ['Enter your Volunteer Card ID (e.g. HIPE-...) or phone number.'] };
   }
 
   const records = loadAll();
@@ -90,7 +117,7 @@ export function findSupporter(identifier) {
     : records.find(r => String(r.card_number || '').toUpperCase() === query.toUpperCase());
 
   if (!match) {
-    return { ok: false, errors: ['No supporter card matched that Card ID or phone number.'] };
+    return { ok: false, errors: ['No HIPE-Agenda Volunteer card matched that Card ID or phone number.'] };
   }
 
   return { ok: true, supporter: match };

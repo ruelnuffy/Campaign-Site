@@ -30,7 +30,7 @@ export default function Countdown() {
               <span className="cd-dot" aria-hidden="true" />
               Countdown to Election
             </p>
-            <h2>Forward with Renewed Hope &amp; HIPE 2.0</h2>
+            <h2>Delivering the HIPE Agenda Across Our Constituency</h2>
           </div>
           <div className="cd-grid" role="timer" aria-live="off">
             <div className="cd-box cd-days">

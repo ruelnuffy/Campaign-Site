@@ -1,0 +1,184 @@
+{
+  "lgas": {
+    "Ohaozara": {
+      "wards": [
+        "Amaechi Okposi",
+        "Ene-Naezeraku",
+        "Mgbom Okposi",
+        "Obiozara",
+        "Okposi Achara",
+        "Okposi Okwu",
+        "Ugbogologo Ugwulangwu",
+        "Uhuotaru Ugwulangwu",
+        "Umuchima",
+        "Umunaga",
+        "Umuobuna"
+      ],
+      "communities": {
+        "Ugwulangwu": {
+          "summary": "Legislative interventions and community outreach across Ugwulangwu.",
+          "projects": {
+            "Health": [
+              { "title": "Motion to Forestall High Mortality Rate Occasioned by High Manganese Ion Concentration in Water", "location": "Ugwulangwu Community", "status": "National Assembly Motion" }
+            ],
+            "Infrastructural Development": [],
+            "Poverty Alleviation & Empowerment": [],
+            "Education": []
+          }
+        },
+        "Okposi": {
+          "summary": "Community development & HIPE-Agenda interventions in Okposi.",
+          "projects": {
+            "Health": [],
+            "Infrastructural Development": [],
+            "Poverty Alleviation & Empowerment": [],
+            "Education": []
+          }
+        },
+        "Uburu": {
+          "summary": "Community development & HIPE-Agenda interventions in Uburu.",
+          "projects": {
+            "Health": [],
+            "Infrastructural Development": [],
+            "Poverty Alleviation & Empowerment": [],
+            "Education": []
+          }
+        }
+      }
+    },
+    "Onicha": {
+      "wards": [
+        "Abaomege",
+        "Agbabor-Isu",
+        "Amanator-Isu",
+        "Ebia Oshiri",
+        "Enuagu-Onicha",
+        "Isinkwo-Ukawu",
+        "Isi-Onicha",
+        "Obeagu-Isu",
+        "Oguduukwor Oshiri",
+        "Okuzu-Ukawu",
+        "Ugwu-Oshiri",
+        "Umudomi-Onicha"
+      ],
+      "communities": {
+        "Onicha Igboeze": {
+          "summary": "Legislative advocacy and clean water protection for Onicha Igboeze.",
+          "projects": {
+            "Health": [
+              { "title": "Motion to Forestall High Mortality Rate Occasioned by High Manganese Ion Concentration in Water", "location": "Onicha Igboeze Community", "status": "National Assembly Motion" }
+            ],
+            "Infrastructural Development": [],
+            "Poverty Alleviation & Empowerment": [],
+            "Education": []
+          }
+        },
+        "Isuokoma": {
+          "summary": "Federal tertiary education upgrade and community interventions in Isuokoma.",
+          "projects": {
+            "Health": [],
+            "Infrastructural Development": [],
+            "Poverty Alleviation & Empowerment": [],
+            "Education": [
+              { "title": "Federal Universities of Technology Act (Amendment) Bill, 2026 (HB. 2873) — Upgrading Federal College of Education (Technical) Isu to Federal University of Technology, Isu", "location": "Isuokoma", "status": "Sponsored Bill" }
+            ]
+          }
+        },
+        "Oshiri": {
+          "summary": "Community development & HIPE-Agenda interventions in Oshiri.",
+          "projects": {
+            "Health": [],
+            "Infrastructural Development": [],
+            "Poverty Alleviation & Empowerment": [],
+            "Education": []
+          }
+        },
+        "Ukawu": {
+          "summary": "Clean water advocacy and media/technology institute establishment bill for Ukawu.",
+          "projects": {
+            "Health": [
+              { "title": "Motion to Forestall High Mortality Rate Occasioned by High Manganese Ion Concentration in Water", "location": "Ukawu Community", "status": "National Assembly Motion" }
+            ],
+            "Infrastructural Development": [],
+            "Poverty Alleviation & Empowerment": [],
+            "Education": [
+              { "title": "Institute of Film and Media Technology Ukawu, Ebonyi State (Establishment) Bill, 2024", "location": "Ukawu", "status": "Sponsored Bill" }
+            ]
+          }
+        },
+        "Abaomege": {
+          "summary": "Peace-building and legislative intervention for Abaomege.",
+          "projects": {
+            "Health": [],
+            "Infrastructural Development": [
+              { "title": "Motion to End Abaomege–Ishinkwo Crisis", "location": "Abaomege", "status": "National Assembly Motion" }
+            ],
+            "Poverty Alleviation & Empowerment": [],
+            "Education": []
+          }
+        }
+      }
+    },
+    "Ivo": {
+      "wards": [
+        "Akaeze Ukwu",
+        "Amaeze Ishiagu",
+        "Amagu",
+        "Amonye",
+        "Ihenta Ogidi",
+        "Iyioji Akaeze",
+        "Ndiokoro Ukwu",
+        "Ngwogwo",
+        "Obinagu",
+        "Okue",
+        "Umobo"
+      ],
+      "communities": {
+        "Ishiagu": {
+          "summary": "Comprehensive HIPE-Agenda footprint across all wards in Ishiagu Community.",
+          "projects": {
+            "Health": [
+              { "title": "Ongoing Construction of a Healthcare Centre building at former Amaokwe General Hospital", "location": "Amaokwe, Ishiagu", "status": "Ongoing" },
+              { "title": "Construction of Motorized Solar-Powered Borehole", "location": "Eke Ishiagu Market Park", "status": "Completed / Active" },
+              { "title": "Construction of Motorized Solar-Powered Borehole", "location": "Obugwu Amaeze, Ishiagu", "status": "Completed / Active" },
+              { "title": "Construction of a 45,000 Mega Tank Capacity Motorized Borehole", "location": "Opoto Amaeze, Ishiagu (by CPS)", "status": "Completed / Active" },
+              { "title": "Construction of Motorized Solar-Powered Borehole", "location": "Ugwu Iyialualu Ihie, Ishiagu", "status": "Completed / Active" }
+            ],
+            "Infrastructural Development": [
+              { "title": "Ongoing Construction of a Solar Mini Grid at Ishiagu General Hospital (to power General Hospital, Federal College of Agriculture Ishiagu, Ivo Divisional Police HQ, Proposed Ohanivo Mini Stadium & parts of Amagu/Ogwor)", "location": "Amagu Village, Ishiagu", "status": "Ongoing" },
+              { "title": "Installation of 50 Solar Street Lights in each of the 7 wards of Ishiagu Community (350 Solar Street Lights total)", "location": "All 7 Wards of Ishiagu", "status": "Completed" },
+              { "title": "Completion of ICDU Women Wing Hall (abandoned for over 20 years)", "location": "Ogadimma, Amaonye, Ishiagu", "status": "Completed" },
+              { "title": "Construction of Engine Oku down to CPS Opoto Amaeze Junction Road (500m first phase with Asphalt)", "location": "Amaeze, Ishiagu", "status": "Phase 1 Completed" },
+              { "title": "Construction of Amaeze / Amata Bypass Road (500m with Asphalt)", "location": "Amaeze / Amata, Ishiagu", "status": "Completed" },
+              { "title": "Ongoing Construction of a 10-Hectare Irrigation Farm", "location": "Ugwueziafor by Yitter Quarry Junction, Amaeze", "status": "Ongoing" },
+              { "title": "Attracted a 24-Hour Solar-Powered Free ICT E-Learning Centre", "location": "Ishiagu Civic Centre", "status": "Completed" }
+            ],
+            "Poverty Alleviation & Empowerment": [
+              { "title": "Construction of 2-Bedroom Bungalow Indigent House", "location": "Amaogbu Amaeze, Amaeze Ward", "status": "Completed" },
+              { "title": "Construction of 2-Bedroom Bungalow Indigent House", "location": "Amaonye, Amaonye Ward", "status": "Completed" },
+              { "title": "Construction of 2-Bedroom Bungalow Indigent House", "location": "Okue, Okue Ward", "status": "Completed" },
+              { "title": "Grassroots Empowerment Distribution: Motorcycles, Grinding Machines, Sewing Machines, Laptops, Keke, Barbers' Kits & Make-up Kits", "location": "Ishiagu Community", "status": "Delivered" },
+              { "title": "Facilitated Federal Employment for 24 Ishiagu Indigenes", "location": "Ishiagu Origin", "status": "Delivered" }
+            ],
+            "Education": [
+              { "title": "Complete Renovation of 2 Nos. of 5-Classroom Blocks at Urban Secondary School, Ishiagu", "location": "Amaeke Community, Ishiagu", "status": "Completed" },
+              { "title": "Ongoing Renovation of a 5-Classroom Block at Girls Model Secondary School, Ishiagu", "location": "Ihietutu Community, Ishiagu", "status": "Ongoing" },
+              { "title": "Summer Holiday Lessons (2024, 2025 & 2026) — Thousands of Students Benefitted", "location": "Ishiagu Community", "status": "Annual Program" },
+              { "title": "Scholarships to Students of Ishiagu Origin", "location": "Ishiagu", "status": "Active" },
+              { "title": "Federal University of Agriculture and Development Studies, Ishiagu (Establishment) Bill, 2025 (HB.2052)", "location": "Ishiagu", "status": "Third Reading Passed" }
+            ]
+          }
+        },
+        "Akaeze": {
+          "summary": "Community development & HIPE-Agenda interventions in Akaeze.",
+          "projects": {
+            "Health": [],
+            "Infrastructural Development": [],
+            "Poverty Alleviation & Empowerment": [],
+            "Education": []
+          }
+        }
+      }
+    }
+  }
+}

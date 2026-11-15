@@ -2,9 +2,11 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Countdown from './components/Countdown';
-import Movement from './components/Movement';
-import Gallery from './components/Gallery';
 import Agenda from './components/Agenda';
+import ProjectsExplorer from './components/ProjectsExplorer';
+import CoreMandate from './components/CoreMandate';
+import Gallery from './components/Gallery';
+import EventsSection from './components/EventsSection';
 import SupporterSection from './components/SupporterSection';
 import SupporterCardView from './components/SupporterCardView';
 import Footer from './components/Footer';
@@ -35,9 +37,11 @@ export default function App() {
       <main>
         <Hero />
         <Countdown />
-        <Movement />
-        <Gallery />
         <Agenda />
+        <ProjectsExplorer />
+        <CoreMandate />
+        <EventsSection />
+        <Gallery />
         <SupporterSection
           onCardReady={data => {
             setSupporter(data);

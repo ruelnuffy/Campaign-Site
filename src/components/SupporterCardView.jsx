@@ -8,10 +8,10 @@ export default function SupporterCardView({ supporter, onBack }) {
   const fullName = String(supporter.full_name || '').toUpperCase();
 
   const handleShare = async () => {
-    const text = `My HIPE 2.0 Supporter Card ID: ${cardNumber} — Hon. Dr. Nkemkanma Kama (Renewed Hope for FON na HIPE 2.0)`;
+    const text = `My HIPE-Agenda Volunteer Card ID: ${cardNumber} — Hon. (Dr.) Kama Nkemkanma, FIMC, CMC (kamaconnect.com)`;
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'HIPE 2.0 Supporter Card', text });
+        await navigator.share({ title: 'HIPE-Agenda Volunteer Card', text });
         return;
       } catch {
         // Fallback to clipboard
@@ -31,8 +31,8 @@ export default function SupporterCardView({ supporter, onBack }) {
         </button>
 
         <header className="card-head no-print">
-          <p className="eyebrow">HIPE 2.0 &bull; Ebonyi State</p>
-          <h1>Your HIPE 2.0 Supporter Card</h1>
+          <p className="eyebrow">HIPE Agenda &bull; Ebonyi State</p>
+          <h1>Your HIPE-Agenda Volunteer Card</h1>
           <p className="card-id-note">
             Card ID: <strong>{cardNumber}</strong> &mdash; Save this ID to reprint your card anytime.
           </p>
@@ -49,16 +49,17 @@ export default function SupporterCardView({ supporter, onBack }) {
           </p>
         </header>
 
-        <section className="id-cards" aria-label="HIPE 2.0 Supporter ID Card">
+        <section className="id-cards" aria-label="HIPE-Agenda Volunteer ID Card">
           <article className="id-card id-front">
             <div className="id-top">
               <div>
-                <span className="id-badge">APC &bull; HIPE 2.0</span>
-                <h2>HON. DR. NKEMKANMA KAMA</h2>
-                <p className="id-slogan">This Renewed Hope for FON na HIPE 2.0</p>
+                <span className="id-badge">APC &bull; HIPE AGENDA</span>
+                <h2>HON. (DR.) KAMA NKEMKANMA</h2>
+                <p className="id-slogan">FIMC, CMC &bull; Ohaozara / Onicha / Ivo</p>
               </div>
-              <div className="id-crest" aria-hidden="true">
-                HK
+              <div className="dual-logos white-logos" aria-hidden="true">
+                <img className="logo-apc" src="/assets/apc-logo.png" alt="" height="28" />
+                <img className="logo-hipe" src="/assets/hipe-logo.jpg" alt="" height="28" />
               </div>
             </div>
 
@@ -68,22 +69,30 @@ export default function SupporterCardView({ supporter, onBack }) {
                 <b>{cardNumber}</b>
               </div>
               <div>
-                <span>CONSTITUENCY</span>
-                <b>Ohaozara / Onicha / Ivo</b>
-              </div>
-              <div>
                 <span>LGA</span>
                 <b>{supporter.lga}</b>
+              </div>
+              <div>
+                <span>COMMUNITY</span>
+                <b>{supporter.community || '—'}</b>
               </div>
               <div>
                 <span>WARD</span>
                 <b>{supporter.ward}</b>
               </div>
+              <div>
+                <span>POLLING UNIT</span>
+                <b>{supporter.polling_unit || '—'}</b>
+              </div>
+              <div>
+                <span>EMAIL</span>
+                <b>{supporter.email || '—'}</b>
+              </div>
             </div>
 
             <div className="id-foot">
               <div>
-                <span className="id-role">VERIFIED SUPPORTER</span>
+                <span className="id-role">HIPE-AGENDA VOLUNTEER MEMBER</span>
                 <strong className="id-holder">{fullName}</strong>
               </div>
               <span className="id-state">EBONYI STATE</span>
@@ -93,15 +102,15 @@ export default function SupporterCardView({ supporter, onBack }) {
           <article className="id-card id-back">
             <div className="id-top">
               <div>
-                <span className="id-badge">OFFICIAL SUPPORTER PASS</span>
-                <h2>CONTINUA &bull; RENEWED HOPE</h2>
+                <span className="id-badge">OFFICIAL VOLUNTEER PASS</span>
+                <h2>HIPE AGENDA &bull; KAMACONNECT</h2>
               </div>
               <span className="id-chip" aria-hidden="true" />
             </div>
 
             <p className="id-advisory">
-              This card identifies a registered grassroots supporter of{' '}
-              <strong>Hon. Dr. Nkemkanma Kama (Ijele Chukwu)</strong> for Ohaozara / Onicha / Ivo
+              This card identifies a registered HIPE-Agenda Volunteer Member supporting{' '}
+              <strong>Hon. (Dr.) Kama Nkemkanma, FIMC, CMC</strong> for Ohaozara / Onicha / Ivo
               Federal Constituency, Ebonyi State.
             </p>
 
@@ -111,7 +120,7 @@ export default function SupporterCardView({ supporter, onBack }) {
               ))}
             </div>
             <p className="id-back-code">
-              {cardNumber} &bull; {supporter.lga} LGA
+              {cardNumber} &bull; {supporter.lga} LGA &bull; {supporter.community}
             </p>
           </article>
         </section>
